@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>華南銀行專屬購物優惠</title>
+    <link rel="icon" href="https://img.91app.com/webapi/images/t/512/512/ShopIcon/41619/0/05190903">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        .login-box h2 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005ea6;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+
+<body oncontextmenu ="return false">
+<div class="login-box">
+    <a class="logo-link" title="GNC - 全球最大保健食品連鎖品牌" href="https://www.gnc.com.tw/"><img loading="lazy" style="display: flex; justify-content: flex-end; align-items: center; padding: 20px;" src="https://cms-static.cdn.91app.com/images/original/41619/cb3f00ce-d58e-40f6-99b3-8ee763cfb727-1690430527-gneeaey19k_d.png" alt="GNC - 全球最大保健食品連鎖品牌" class="logo-img" data-qe-id="header-logo-img"/></a>
+
+    <h2>華南銀行<br>專屬購物優惠</h2>
+    <input type="text" id="username" placeholder="帳號">
+    <input type="password" id="password" placeholder="密碼" oninput="clearInnerText()">
+    <button id="btnLogin" onclick="login()">確認</button>
+    <div class="error" id="errorMsg"></div>
+</div>
+
+<script>
+function clearInnerText() {
+    document.getElementById("errorMsg").innerText = "";
+}
+</script>
+
+<script>
+function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // 👉 這裡設定正確帳號密碼
+    const correctUser = "admin";
+    const correctPass = "123456";
+
+    if (username === correctUser && password === correctPass) {
+        // 👉 成功後跳轉
+        //document.getElementById("btnLogin").disabled = true;
+        document.getElementById("btnLogin").style.visibility = "hidden";
+        document.getElementById("errorMsg").innerText = "網頁跳轉中,請稍待...";
+        window.location.href = "https://www.gnc.com.tw";
+    } else {
+        document.getElementById("errorMsg").innerText = "帳號或密碼錯誤！";
+    }
+}
+</script>
+
+</body>
+</html>
